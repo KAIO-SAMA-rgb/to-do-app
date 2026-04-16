@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seja bem vindo ao jerenciador - Desktop</title>
+    
+    <style>
+        /* CSS RESET - Para o site ficar igual em qualquer navegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        /* CONTAINER PARA PC - Mais largo e elegante */
+        .desktop-container {
+            background-color: #57a0ff8f;
+            width: 80%;
+            max-width: 800px; /* Limite de largura para não esticar demais em monitores grandes */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a73e8;
+        }
+
+        /* ÁREA DE ENTRADA LADO A LADO (LAYOUT DESKTOP) */
+        .input-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .input-row input {
+            flex: 3; /* O campo de texto ganha mais espaço */
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .input-row select {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .input-row button {
+            flex: 1;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .input-row button:hover {
+            background-color: #1557b0;
+        }
+
+        /* LISTA DE TAREFAS */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 8px solid #ccc; /* Borda de prioridade */
+        }
+
+        /* CORES DE PRIORIDADE */
+        .alta { border-left-color: #ea4335; }
+        .media { border-left-color: #fbbc05; }
+        .baixa { border-left-color: #34a853; }
+
+        .tarefa-texto {
+            font-size: 18px;
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+
+        .concluida {
+            text-decoration: line-through;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="desktop-container">
+        <h1>Minha Lista de Tarefas Profissional</h1>
+
+        <div class="input-row">
+            <input type="text" placeholder="Qual a próxima tarefa?">
+            
+            <select>
+                <option value="alta">Alta</option>
+                <option value="media" selected>Média</option>
+                <option value="baixa">Baixa</option>
+            </select>
+
+            <button type="button">Adicionar</button>
+        </div>
+
+        <hr style="margin-bottom: 25px; opacity: 0.3;">
+
+        <ul>
+            <li class="alta">
+                <input type="checkbox">
+                <span class="tarefa-texto">Finalizar projeto de Algoritmos</span>
+            </li>
+            
+            <li class="media">
+                <input type="checkbox">
+                <span class="tarefa-texto">Estudar seletores CSS</span>
+            </li>
+
+            <li class="baixa">
+                <input type="checkbox" checked>
+                <span class="tarefa-texto concluida">Configurar o Visual Studio Code</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
